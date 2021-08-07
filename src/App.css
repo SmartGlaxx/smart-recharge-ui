@@ -1,0 +1,52 @@
+:root{
+  --background-color1: rgb(4, 4, 102);
+  --background-color1: #07004D;
+  --background-color2: #2277aa;
+  --background-color3: #f3f2f8;
+  --text-color1 : #fff;
+  --text-color2 : #000;
+  --text-color3 : #07004D;
+
+
+
+}
+html {
+  font-size: 80%; 
+  font-family: "Alef";
+}
+#navbar{
+  background : var(--background-color1);
+}
+#tabItem {
+  background : var(--background-color1);
+  color : var(--text-color1);
+  font-weight: 200;
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+#tabBlock{
+  background : var(--background-color1);
+}
+#btnActive, #btn{
+  font-size: 1rem;
+  width: 100%;
+  padding: 1rem;
+  justify-content: left;
+  color: var(--text-color1);
+}
+#btnActive{
+  color: var(--text-color2);
+  font-weight: 700;
+  transition: all 0.6s;
+  transform: translateX(1rem);
+  background: rgba( 255, 255, 255, 0.75 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 18.5px );
+  -webkit-backdrop-filter: blur( 18.5px );
+  border-radius: 0.2rem;
+  
+}
+
+@media screen and (max-width: 600px){
+  #tabBlock{display: none;}
+}
