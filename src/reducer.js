@@ -6,8 +6,12 @@ const reducer =(state, action)=>{
         case "SET_AIRTIME_SERVICE":
             return {...state, airtimeService: action.payload}
             break;
+        case "SET_SEARCH_VALUE" :
+            return {...state, searchValue : action.payload}
+        case "SET_SEARCH_BAR":
+            const serchB = !state.serachBar
+            return {...state, serachBar : serchB}          
 
-            
         default :
             return {...state}
     }

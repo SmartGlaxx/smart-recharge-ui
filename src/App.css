@@ -2,8 +2,11 @@
   --background-color1: rgb(4, 4, 102);
   --background-color1: #07004D;
   --background-color2: #2277aa;
+  --background-color3: #f3f2f8;
   --text-color1 : #fff;
   --text-color2 : #000;
+  --text-color3 : #07004D;
+  --text-color4 : #33f;
 
 
 
@@ -42,6 +45,13 @@ html {
   backdrop-filter: blur( 18.5px );
   -webkit-backdrop-filter: blur( 18.5px );
   border-radius: 0.2rem;
+}
+#home-container{
+  background: url('./assets/hero/img4.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
   
 }
 

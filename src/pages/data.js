@@ -44,7 +44,8 @@ const useStyles = makeStyles((theme) => ({
         webkitBorderRadius: '1rem',
         borderRadius: '1rem',
         background: "var(--background-color1)",
-        background : "rgba(124, 14, 235)",
+        // background : "rgba(92, 51, 85)",
+        background: "linear-gradient(123deg, navy, rgba(92, 51, 85, 0.7))",
         color :"var(--text-color1)",
         webkitBoxShadow: "12px 12px 24px #d9d9d9,-12px -12px 24px #ffffff",
         boxShadow: "12px 12px 24px #d9d9d9,-12px -12px 24px #ffffff",
@@ -91,7 +92,14 @@ const useStyles = makeStyles((theme) => ({
 
       },
       subHeading:{
-        marginTop: "7rem"
+        marginTop:"5rem",
+        position: 'relative',
+        [theme.breakpoints.down('sm')]:{
+          marginTop:"13rem",
+        },
+        [theme.breakpoints.down('xs')]:{
+          marginTop:"27rem",
+        }
       },
       images:{
         width: "2.5rem",

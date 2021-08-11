@@ -16,8 +16,9 @@ import FlashOnTwoToneIcon from '@material-ui/icons/FlashOnTwoTone';
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import PhoneAndroidOutlinedIcon from '@material-ui/icons/PhoneAndroidOutlined';
 import AccountBalanceWalletTwoToneIcon from '@material-ui/icons/AccountBalanceWalletTwoTone';
+import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 
-const NavConstants = [
+export const NavConstants = [
     {
         id : 0,
         name : 'Home',
@@ -40,7 +41,7 @@ const NavConstants = [
         link : "/data",
         icon : <NetworkWifiTwoToneIcon />,
         options : ['MTN', 'Airtel', 'Glo', '9Mobile'],
-        background: "rgba(124, 14, 235, 0.4)"
+        background: "rgba(92, 51, 85, 0.4)"
     },  
     {
         id : 3,
@@ -48,7 +49,7 @@ const NavConstants = [
         link : "/electricity",
         icon : <FlashOnTwoToneIcon />,
         options : [],
-        background: "rgba(219, 18, 18, 0.4)"
+        background: "rgba(148, 6, 6, 0.4)"
     },
     {
         id : 4,
@@ -56,7 +57,7 @@ const NavConstants = [
         link : "/cableTv",
         icon : <TvTwoToneIcon />,
         options : [],
-        background: "rgba(230, 207, 9, 0.4)"
+        background: "rgba(124, 14, 235, 0.4)"
     },
     {
         id : 5,
@@ -64,7 +65,7 @@ const NavConstants = [
         link : "/wallet",
         icon : <AccountBalanceWalletTwoToneIcon />,
         options:[],
-        background: "rgba(230, 9, 134, 0.4)"
+        background: "rgba(4, 88, 92, 0.4)"
     },  
     {
         id : 6,
@@ -91,5 +92,55 @@ const NavConstants = [
         background: "rgba(15, 20, 20, 0.4)"
     },
 ]
+ 
 
-export default NavConstants
+export const BottomNavConstants = [
+    {
+        id : 0,
+        name : 'Home',
+        link : "/",
+        icon : <HomeTwoToneIcon />,
+        options : [],
+        background: "rgba(100,100,100, 0.4)"
+    },  
+    {
+        id : 1,
+        name : 'Buy Airtime',
+        link : "/airtime",
+        icon : <PhoneAndroidTwoToneIcon />,
+        options : ['MTN', 'Airtel', 'Glo', '9Mobile'],
+        background: "rgba(23, 29, 212, 0.4)"
+    },
+    {
+        id : 2,
+        name : 'Buy Data',
+        link : "/data",
+        icon : <NetworkWifiTwoToneIcon />,
+        options : ['MTN', 'Airtel', 'Glo', '9Mobile'],
+        background: "rgba(92, 51, 85, 0.4)"
+    },  
+    // {
+    //     id : 3,
+    //     name : 'Electricity',
+    //     link : "/electricity",
+    //     icon : <FlashOnTwoToneIcon />,
+    //     options : [],
+    //     background: "rgba(148, 6, 6, 0.4)"
+    // },
+    // {
+    //     id : 4,
+    //     name : 'Cable Tv',
+    //     link : "/cableTv",
+    //     icon : <TvTwoToneIcon />,
+    //     options : [],
+    //     background: "rgba(124, 14, 235, 0.4)"
+    // },
+    {
+        id : 5,
+        name : 'More',
+        link : "/",
+        icon : <MoreHorizIcon />,
+        options : [],
+        background: "rgba(124, 14, 235, 0.4)"
+    },
+]

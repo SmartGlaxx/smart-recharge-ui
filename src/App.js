@@ -2,16 +2,21 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
-
-import {Home, Profile, Transactions, Airtime, Data, Electricity, CableTv, FAQ, Contact, Logout, NotFound} from './pages'
+import {useGlobalContext} from './context'
+import {Home, Profile, Transactions, Airtime, Data, Electricity, CableTv,
+  Wallet, FAQ, Contact, Logout, NotFound} from './pages'
 import {AirtimePackages} from './subPages'
-import {Header, Sidebar, PageDisplay, Footer} from './components'
+import {Header, Sidebar, PageDisplay, SearchResult, Overlay, Footer,
+  BottomNav} from './components'
+
 
 function App() {
+  const {searchValue} = useGlobalContext()
   return (<div className="App">
       <Router>
         <Header />
         <Sidebar />
+        { searchValue && <><Overlay/><SearchResult /></>}
         {/* <PageDisplay /> */}
         <Switch>
           <Route path='/' exact>  
@@ -35,6 +40,9 @@ function App() {
           <Route path='/cabletv' exact>  
             <CableTv />
           </Route>
+          <Route path='/wallet' exact>  
+            <Wallet />
+          </Route>
           <Route path='/transactions' exact>  
             <Transactions />
           </Route>
@@ -54,7 +62,8 @@ function App() {
             <NotFound/>
           </Route>
         </Switch>
-        <Footer />
+        <BottomNav/>
+        {/* <Footer /> */}
       </Router>
     </div>
   );

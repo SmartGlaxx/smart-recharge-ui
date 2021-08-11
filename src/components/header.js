@@ -12,8 +12,12 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import Button from '@material-ui/core/Button';
-
+import {useGlobalContext} from '../context'
+import {Link} from 'react-router-dom'
 import {NavConstants} from '../constants' 
+import {ServiceSearch} from '../components'
+import {ServiceList} from '../constants'
+import {Logo} from '../assets/hero'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -36,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     display: 'none',
     [theme.breakpoints.up('sm')]: {
-      display: 'block',
+      display: 'flex',
     },
   },
   search: {
@@ -80,16 +84,30 @@ const useStyles = makeStyles((theme) => ({
   },
   authBtn:{
     color: "var(--text-color1)"
+  },
+  logo:{
+    background: "white",
+    width:"3rem"
+  },
+  name:{
+    margin: "auto 1rem"
+  },
+  showSerach:{
+    color: "var(--text-color1)",
+    height: '2rem',
+    width:"1rem"
   }
 }));
 
 
 export default function Header() {
+  const {searchValue, showSearchBar} = useGlobalContext()
   const classes = useStyles();
   const [auth, setAuth] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-  
+
+
 const handleChange = (event) => {
     setAuth(event.target.checked);
   };
@@ -116,21 +134,9 @@ const handleChange = (event) => {
             <MenuIcon />
           </IconButton> */}
           <Typography className={classes.title} variant="h6" noWrap>
-            Material-UI
+            <img src ={Logo} alt='SR' className={classes.logo} />
+            <span className={classes.name} >Smart Recharge</span>
           </Typography>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </div>
           {auth ? (
             <div>
               <IconButton
@@ -169,6 +175,10 @@ const handleChange = (event) => {
             </div>
 
         }
+          <div className={classes.search}>
+             <ServiceSearch />
+          </div>
+          <Button onClick={showSearchBar} className={classes.showSerach}><SearchIcon /></Button>
         </Toolbar>
       </AppBar>
     </div>

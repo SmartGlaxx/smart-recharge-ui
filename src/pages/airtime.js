@@ -43,6 +43,7 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: '1rem',
         background: "var(--background-color1)",
         background: "rgb(23, 29, 212)",
+        background: "linear-gradient(123deg, navy, rgba(23, 29, 212, 0.7))",
         color :"var(--text-color1)",
         webkitBoxShadow: "12px 12px 24px #d9d9d9,-12px -12px 24px #ffffff",
         boxShadow: "12px 12px 24px #d9d9d9,-12px -12px 24px #ffffff",
@@ -86,10 +87,16 @@ const useStyles = makeStyles((theme) => ({
       },
       sectionHeading:{
         fontSize: "2rem",
-
       },
       subHeading:{
-        marginTop: "7rem"
+        marginTop:"5rem",
+        position: 'relative',
+        [theme.breakpoints.down('sm')]:{
+          marginTop:"13rem",
+        },
+        [theme.breakpoints.down('xs')]:{
+          marginTop:"27rem",
+        }
       },
       images:{
         width: "2.5rem",

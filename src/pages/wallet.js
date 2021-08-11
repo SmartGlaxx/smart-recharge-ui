@@ -13,11 +13,11 @@ import Grow from '@material-ui/core/Grow';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Grid from '@material-ui/core/Grid';
 import {Transactions} from '../components'
-// import Mtn from '../assets/mtn.jpg'
-// import Airtel from '../assets/airtel.jpg'
-// import Glo from '../assets/glo.jpg'
-// import NineMobile from '../assets/nineMobile.jpg'
-import {Aedc, Eko, Ibedc, Ikeja, Jed, Kadelect, Kedco, Phed} from '../assets/power'
+// import Mtn from '../assets/Wallet/mtn.jpg'
+// import Airtel from '../assets/Wallet/airtel.jpg'
+// import Glo from '../assets/Wallet/glo.jpg'
+// import NineMobile from '../assets/Wallet/nineMobile.jpg'
+// import {Mtn, Airtel, Glo, NineMobile} from '../assets/Wallet'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -36,16 +36,13 @@ const useStyles = makeStyles((theme) => ({
     },
     main:{
         height: "5rem",
-        // marginTop:"10rem",
-        background: "white",
         borderRadius : "1rem",
         padding: "5rem",
         paddingTop: "3rem",
         webkitBorderRadius: '1rem',
         borderRadius: '1rem',
         background: "var(--background-color1)",
-        // background : "rgba(148, 6, 6)",
-        background: "linear-gradient(123deg, navy, rgba(148, 6, 6, 0.7))",
+        background: "linear-gradient(123deg, navy, rgba(4, 88, 92, 0.7))",
         color :"var(--text-color1)",
         webkitBoxShadow: "12px 12px 24px #d9d9d9,-12px -12px 24px #ffffff",
         boxShadow: "12px 12px 24px #d9d9d9,-12px -12px 24px #ffffff",
@@ -69,16 +66,10 @@ const useStyles = makeStyles((theme) => ({
       paper: {
         margin: theme.spacing(1),
         color: "black",
-        // display :"grid",
-        // placeItems: "bottom",
+        display :"grid",
+        placeItems: "center",
         height: "6rem",
-        position: "relative",
-        whiteSpace: 'nowrap',
-        overflow: 'hidden',
-        textOverflow: 'ellipsis',
-        paddingTop: "2rem",
-        paddingLeft: "4rem",
-        paddingRight: "0.4rem",
+        position: "relative"
         // [theme.breakpoints.down('xs')]:{
         //   margin : "5rem 0"
         // }
@@ -98,13 +89,13 @@ const useStyles = makeStyles((theme) => ({
 
       },
       subHeading:{
-        marginTop:"17rem",
+        marginTop:"5rem",
         position: 'relative',
         [theme.breakpoints.down('sm')]:{
-          marginTop:"35rem",
+          marginTop:"6rem",
         },
         [theme.breakpoints.down('xs')]:{
-          marginTop:"72rem",
+          marginTop:"15rem",
         }
       },
       images:{
@@ -120,19 +111,13 @@ const useStyles = makeStyles((theme) => ({
         // [theme.breakpoints.down('md')]:{
         //   width: "25%",
         // }
-      },
-      name:{
-        whiteSpace: 'nowrap',
-        overflow: 'hidden',
-        textOverflow: 'ellipsis',
-          
       }
  })
 )
 
-const Electricity =()=>{
+const Wallet =()=>{
     const {selectedServiceValue, 
-        // setElectricityNavItems, ElectricityOptions
+        // setWalletNavItems, WalletOptions
     } = useGlobalContext()
     const classes = useStyles()
     const [checked, setChecked] = React.useState(false);
@@ -141,16 +126,19 @@ const Electricity =()=>{
       setChecked((prev) => !prev);
     },[])
   
-         
+    // const path = useParams()
+  
+
+    
     return <div className={classes.root}>
         <div className={classes.main}>
-          <h2 className={classes.sectionHeading}>Buy Electricity</h2>
+          <h2 className={classes.sectionHeading}>My Wallet</h2>
         <Grid container className={classes.container}>
             <Grid item xs={12} sm={6} md={3} lg={3}>
             <Grow in={checked}>
             <Paper elevation={4} className={classes.paper}>
-              <img src={Aedc} alt='Aedc' className={classes.images}/>
-              <h3 className={classes.name}>Abuja Electricity Distribution Company</h3>
+              {/* <img src={Mtn} alt='MTN' className={classes.images}/> */}
+              <h2>Wallet Balance</h2>
             </Paper>
             </Grow>
             </Grid>
@@ -162,20 +150,20 @@ const Electricity =()=>{
             {...(checked ? { timeout: 1000 } : {})}
             >
             <Paper elevation={4} className={classes.paper}>
-            <img src={Eko} alt='Eko' className={classes.images}/>
-            <h3 className={classes.name}>Eko Electricity Distribution Company</h3>
+            {/* <img src={Airtel} alt='Airtel' className={classes.images}/> */}
+            <h2>Fund Wallet</h2>
             </Paper>
             </Grow>
             </Grid>
-            <Grid item xs={12} sm={6} md={3} lg={3}>
+            {/* <Grid item xs={12} sm={6} md={3} lg={3}>
             <Grow
             in={checked}
             style={{ transformOrigin: '0 0 0' }}
             {...(checked ? { timeout: 2000 } : {})}
             >
             <Paper elevation={4} className={classes.paper}>
-            <img src={Ibedc} alt='Ibedc' className={classes.images}/>
-            <h3 className={classes.name}>Ibadan Electricity Distribution Company</h3>
+            <img src={Glo} alt='Glo' className={classes.images}/>
+            <h2>Glo</h2>
             </Paper>
             </Grow>
             </Grid>
@@ -186,67 +174,15 @@ const Electricity =()=>{
             {...(checked ? { timeout: 3000 } : {})}
             >
             <Paper elevation={4} className={classes.paper}>
-            <img src={Ikeja} alt='Ikeja' className={classes.images}/>
-            <h3 className={classes.name}>Ikeja Electricity Distribution Plc</h3>
+            <img src={NineMobile} alt='9Mobile' className={classes.images}/>
+            <h2>9 Mobile</h2>
             </Paper>
             </Grow>
-            </Grid>
-        {/* </Grid>
-
-        <Grid container className={classes.container}> */}
-            <Grid item xs={12} sm={6} md={3} lg={3}>
-            <Grow
-            in={checked}
-            style={{ transformOrigin: '0 0 0' }}
-            {...(checked ? { timeout: 4000 } : {})}
-            >
-            <Paper elevation={4} className={classes.paper}>
-              <img src={Jed} alt='Jed' className={classes.images}/>
-              <h3 className={classes.name}>Jos Electricity Distribution Plc</h3>
-            </Paper>
-            </Grow>
-            </Grid>
-            {/* Conditionally applies the timeout prop to change the entry speed. */}
-            <Grid item xs={12} sm={6} md={3} lg={3}>
-            <Grow
-            in={checked}
-            style={{ transformOrigin: '0 0 0' }}
-            {...(checked ? { timeout: 5000 } : {})}
-            >
-            <Paper elevation={4} className={classes.paper}>
-            <img src={Kadelect} alt='Kadelect' className={classes.images}/>
-            <h3 className={classes.name}>Kaduna Electricity Distribution Company</h3>
-            </Paper>
-            </Grow>
-            </Grid>
-            <Grid item xs={12} sm={6} md={3} lg={3}>
-            <Grow
-            in={checked}
-            style={{ transformOrigin: '0 0 0' }}
-            {...(checked ? { timeout: 6000 } : {})}
-            >
-            <Paper elevation={4} className={classes.paper}>
-            <img src={Kedco} alt='Kedco' className={classes.images}/>
-            <h3 className={classes.name}>Kano Electricity Distribution Company Plc</h3>
-            </Paper>
-            </Grow>
-            </Grid>
-            <Grid item xs={12} sm={6} md={3} lg={3}>
-            <Grow
-            in={checked}
-            style={{ transformOrigin: '0 0 0' }}
-            {...(checked ? { timeout: 7000 } : {})}
-            >
-            <Paper elevation={4} className={classes.paper}>
-            <img src={Phed} alt='Phed' className={classes.images}/>
-            <h3 className={classes.name}>Port Harcourt Electricity Distribution Company</h3>
-            </Paper>
-            </Grow>
-            </Grid>
+            </Grid> */}
         </Grid>
         </div>
         <div className={classes.subHeading}>
-          <h2 className={classes.sectionSubHeading}>Electricity Transcations</h2>
+          <h2 className={classes.sectionSubHeading}>Wallet History</h2>
           <div>
             <Transactions />
           </div>
@@ -254,4 +190,4 @@ const Electricity =()=>{
     </div>
 }
 
-export default Electricity
+export default Wallet
