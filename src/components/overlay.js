@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Overlay() {
-  const {setSearchValue} = useGlobalContext()
+  const {setSearchValue, setMenu} = useGlobalContext()
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const handleClose = () => {
@@ -67,8 +67,9 @@ export default function Overlay() {
 
   return (
     <div onClick={()=>setSearchValue('')}>
-      <div className={classes.overlay} open={open} onClick={handleClose}>
-      </div>
+      <span onClick={setMenu}>
+        <div className={classes.overlay} open={open} onClick={handleClose}></div>
+        </span>
     </div>
   );
 }

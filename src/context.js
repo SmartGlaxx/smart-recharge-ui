@@ -7,7 +7,9 @@ const initialState ={
     selectedServiceValue : {},
     airtimeService : {},
     searchValue : '',
-    serachBar:""
+    serachBar:"",
+    openMenu: false,
+    purchaseDetails:{}
 }
 const GlobalProvider = ({children})=>{
     const [state, dispatch] = useReducer(reducer, initialState)
@@ -26,8 +28,16 @@ const GlobalProvider = ({children})=>{
     const showSearchBar = ()=>{
         dispatch({type: "SET_SEARCH_BAR"})
     }
+    const setMenu =()=>{
+        dispatch({type:"SET_MENU"})
+    }
+    
+    const setPaymentValues =(value)=>{
+        dispatch({type:"SET_PAYMENT_VALUES", payload: value})
+    }
     return <GlobalContext.Provider value={{
-        ...state, setServiceValue, setAirtimeNavItems, setSearchValue,showSearchBar
+        ...state, setServiceValue, setAirtimeNavItems, setSearchValue,showSearchBar,
+        setMenu, setPaymentValues
     }}>
         {children}
     </GlobalContext.Provider>

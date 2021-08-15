@@ -39,7 +39,7 @@ html {
   color: var(--text-color2);
   font-weight: 700;
   transition: all 0.6s;
-  transform: translateX(1rem);
+  transform: scale(0.90);
   background: rgba( 255, 255, 255, 0.75 );
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 18.5px );
@@ -55,6 +55,6 @@ html {
   
 }
 
-@media screen and (max-width: 600px){
+/* @media screen and (max-width: 600px){
   #tabBlock{display: none;}
-}
+} */

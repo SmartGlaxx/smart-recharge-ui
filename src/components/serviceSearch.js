@@ -40,7 +40,7 @@ export default function ServiceSearch() {
       id="combo-box-demo"
       options={services}
       getOptionLabel={(option) => option.title}
-      style={{ minWidth: 200}}
+      style={{ minWidth: 150}}
       onChange={(event,value)=>{setValue(value)}}
       renderInput={(params) => <TextField {...params} label=""  className={classes.input} placeholder='Search for a service'/>}
     />}

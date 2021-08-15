@@ -10,6 +10,9 @@ import FAQ from './faq'
 import Contact from './contact'
 import Logout from './logout'
 import NotFound from './notFound'
+import Payment from './payment'
+import AirtimeDetails from './airtimeDetails'
 
 export {Home, Profile, Airtime, Data, Electricity, CableTv, 
-     Wallet, Transactions, FAQ, Contact, Logout, NotFound}
+     Wallet, Transactions, FAQ, Contact, Logout, NotFound, Payment, 
+     AirtimeDetails}

@@ -273,7 +273,7 @@ const useStyles = makeStyles((theme) => ({
  })
 )
 
-const Data =()=>{
+const Home =()=>{
     const {selectedServiceValue,searchValue} = useGlobalContext()
     const classes = useStyles()
     const [checked, setChecked] = React.useState(false);
@@ -282,7 +282,11 @@ const Data =()=>{
       setChecked((prev) => !prev);
     },[])
 
- console.log(searchValue)
+    useEffect(()=>{
+      window.scrollTo(0,0)
+    },[])
+    
+
     return <div className={classes.root}>
         <div className={classes.main}>
         <Grid container className={classes.container} id="home-container">
@@ -392,4 +396,4 @@ const Data =()=>{
     </div>
 }
 
-export default Data
+export default Home

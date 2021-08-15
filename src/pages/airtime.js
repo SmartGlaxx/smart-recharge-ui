@@ -125,21 +125,25 @@ const Airtime =()=>{
     useEffect(() => {
       setChecked((prev) => !prev);
     },[])
+
+    useEffect(()=>{
+      window.scrollTo(0,0)
+    },[])
   
     // const path = useParams()
-  
-
-    
+     
     return <div className={classes.root}>
         <div className={classes.main}>
           <h2 className={classes.sectionHeading}>Buy Airtime</h2>
         <Grid container className={classes.container}>
             <Grid item xs={12} sm={6} md={3} lg={3}>
             <Grow in={checked}>
+            <Link to='/airtime-purchase/mtn' >
             <Paper elevation={4} className={classes.paper}>
               <img src={Mtn} alt='MTN' className={classes.images}/>
               <h2>MTN</h2>
             </Paper>
+            </Link>
             </Grow>
             </Grid>
             {/* Conditionally applies the timeout prop to change the entry speed. */}
@@ -149,10 +153,12 @@ const Airtime =()=>{
             style={{ transformOrigin: '0 0 0' }}
             {...(checked ? { timeout: 1000 } : {})}
             >
+            <Link to='/airtime-purchase/airtel' >
             <Paper elevation={4} className={classes.paper}>
             <img src={Airtel} alt='Airtel' className={classes.images}/>
             <h2>Airtel</h2>
             </Paper>
+            </Link>
             </Grow>
             </Grid>
             <Grid item xs={12} sm={6} md={3} lg={3}>
@@ -161,10 +167,12 @@ const Airtime =()=>{
             style={{ transformOrigin: '0 0 0' }}
             {...(checked ? { timeout: 2000 } : {})}
             >
+            <Link to='/airtime-purchase/glo' >
             <Paper elevation={4} className={classes.paper}>
             <img src={Glo} alt='Glo' className={classes.images}/>
             <h2>Glo</h2>
             </Paper>
+            </Link>
             </Grow>
             </Grid>
             <Grid item xs={12} sm={6} md={3} lg={3}>
@@ -173,10 +181,12 @@ const Airtime =()=>{
             style={{ transformOrigin: '0 0 0' }}
             {...(checked ? { timeout: 3000 } : {})}
             >
+            <Link to='/airtime-purchase/9Mobile' >
             <Paper elevation={4} className={classes.paper}>
             <img src={NineMobile} alt='9Mobile' className={classes.images}/>
             <h2>9 Mobile</h2>
             </Paper>
+            </Link>
             </Grow>
             </Grid>
         </Grid>

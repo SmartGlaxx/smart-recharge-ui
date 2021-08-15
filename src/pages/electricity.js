@@ -130,6 +130,7 @@ const useStyles = makeStyles((theme) => ({
  })
 )
 
+
 const Electricity =()=>{
     const {selectedServiceValue, 
         // setElectricityNavItems, ElectricityOptions
@@ -140,6 +141,11 @@ const Electricity =()=>{
     useEffect(() => {
       setChecked((prev) => !prev);
     },[])
+
+    useEffect(()=>{
+      window.scrollTo(0,0)
+    },[])
+    
   
          
     return <div className={classes.root}>

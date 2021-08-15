@@ -118,6 +118,7 @@ const useStyles = makeStyles((theme) => ({
  })
 )
 
+
 const Data =()=>{
     const {selectedServiceValue, 
         // setDataNavItems, DataOptions
@@ -129,6 +130,10 @@ const Data =()=>{
       setChecked((prev) => !prev);
     },[])
   
+    useEffect(()=>{
+      window.scrollTo(0,0)
+    },[])
+    
     // const path = useParams()
   
 

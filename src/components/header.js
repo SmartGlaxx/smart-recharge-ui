@@ -83,7 +83,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   authBtn:{
-    color: "var(--text-color1)"
+    color: "var(--text-color1)",
   },
   logo:{
     background: "white",
@@ -96,6 +96,11 @@ const useStyles = makeStyles((theme) => ({
     color: "var(--text-color1)",
     height: '2rem',
     width:"1rem"
+  },
+  authBtnBox:{
+    [theme.breakpoints.down('xs')]:{
+      display:'none'
+    }
   }
 }));
 
@@ -124,7 +129,7 @@ const handleChange = (event) => {
     <div className={classes.root}>
       <AppBar className={classes.navbar} id='navbar'>
         <Toolbar>
-          {/* <IconButton
+          <IconButton
             edge="start"
             className={classes.menuButton}
             color="inherit"
@@ -132,7 +137,7 @@ const handleChange = (event) => {
             // onClick={showASidebar}
           >
             <MenuIcon />
-          </IconButton> */}
+          </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
             <img src ={Logo} alt='SR' className={classes.logo} />
             <span className={classes.name} >Smart Recharge</span>
@@ -169,7 +174,7 @@ const handleChange = (event) => {
                 <MenuItem onClick={handleClose}>Log out</MenuItem>
               </Menu>
             </div>)
-          : <div>
+          : <div className={classes.authBtnBox}>
               <Button onClick={handleClose} className={classes.authBtn}>Sign Up</Button>
               <Button onClick={handleClose} className={classes.authBtn}>Login</Button>
             </div>

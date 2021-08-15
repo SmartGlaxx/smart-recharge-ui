@@ -14,6 +14,7 @@ import {RechargeOptions} from '../components'
 import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined';
 import FlashOnTwoToneIcon from '@material-ui/icons/FlashOnTwoTone';
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
+import PersonOutlineTwoToneIcon from '@material-ui/icons/PersonOutlineTwoTone';
 import PhoneAndroidOutlinedIcon from '@material-ui/icons/PhoneAndroidOutlined';
 import AccountBalanceWalletTwoToneIcon from '@material-ui/icons/AccountBalanceWalletTwoTone';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
@@ -96,51 +97,21 @@ export const NavConstants = [
 
 export const BottomNavConstants = [
     {
-        id : 0,
-        name : 'Home',
-        link : "/",
-        icon : <HomeTwoToneIcon />,
-        options : [],
-        background: "rgba(100,100,100, 0.4)"
-    },  
-    {
-        id : 1,
-        name : 'Buy Airtime',
-        link : "/airtime",
-        icon : <PhoneAndroidTwoToneIcon />,
-        options : ['MTN', 'Airtel', 'Glo', '9Mobile'],
-        background: "rgba(23, 29, 212, 0.4)"
+      id : 1,
+      name : "Home",
+      icon : <HomeOutlinedIcon/>,
+      link : "/"
     },
     {
-        id : 2,
-        name : 'Buy Data',
-        link : "/data",
-        icon : <NetworkWifiTwoToneIcon />,
-        options : ['MTN', 'Airtel', 'Glo', '9Mobile'],
-        background: "rgba(92, 51, 85, 0.4)"
-    },  
-    // {
-    //     id : 3,
-    //     name : 'Electricity',
-    //     link : "/electricity",
-    //     icon : <FlashOnTwoToneIcon />,
-    //     options : [],
-    //     background: "rgba(148, 6, 6, 0.4)"
-    // },
-    // {
-    //     id : 4,
-    //     name : 'Cable Tv',
-    //     link : "/cableTv",
-    //     icon : <TvTwoToneIcon />,
-    //     options : [],
-    //     background: "rgba(124, 14, 235, 0.4)"
-    // },
-    {
-        id : 5,
-        name : 'More',
-        link : "/",
-        icon : <MoreHorizIcon />,
-        options : [],
-        background: "rgba(124, 14, 235, 0.4)"
+      id : 2,
+      name : "Profile",
+      icon : <PersonOutlineTwoToneIcon/>,
+      link : "/profile"
     },
-]
+    {
+      id : 3,
+      name : "Wallet",
+      icon : <AccountBalanceWalletTwoToneIcon/>,
+      link : "/wallet"
+    }
+  ]

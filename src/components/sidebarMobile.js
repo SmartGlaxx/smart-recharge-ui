@@ -23,17 +23,18 @@ import { useGlobalContext } from '../context';
 const useStyles = makeStyles((theme) => ({
   root: {
     // flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
-    display: 'block',
+    // backgroundColor: theme.palette.background.paper,
     height: '100vh',
     width: "20rem",
     paddingTop: "6.5rem",
     position: 'fixed',
     textAlign: "left",
-    zIndex: 9,
-    [theme.breakpoints.down('xs')]:{
-      display:"none"
-    }
+    zIndex: "10",
+  },
+  innerBlock:{
+    height: "65%",
+    overflow: 'scroll',
+    paddingBottom: "16.5rem",
   },
   buttonContainer:{
     paddingLeft: "1rem",
@@ -56,8 +57,9 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function Sidebar() {
+export default function SidebarMobile() {
   const classes = useStyles();
+  const {openMenu, setMenu} = useGlobalContext()
   const {selectedServiceValue, setServiceValue} = useGlobalContext()
 
   const handleClick= (item) => {
@@ -66,22 +68,24 @@ export default function Sidebar() {
 
   return (
     <div className={classes.root} id='tabBlock'>
+      <div className={classes.innerBlock}>
         {NavConstants.map(navItem =>{
             const {id, name, icon, link, background} = navItem
             return <div key={id} className={classes.buttonContainer} className={classes.tabItem}  id='tabItem'>
                 <Link to={link} className={classes.link}>
+                  <span onClick={setMenu}>
                     <Button id={selectedServiceValue.id == id ? 'btnActive' : 'btn'} value={id} 
                     onClick={()=>handleClick(navItem)} >
                         <span className={classes.icon} 
                         style={{background : background}}
                         >{icon}</span> <span className={classes.name}>{name}</span>
                     </Button>
+                  </span>
                 </Link>
                 </div>
         })}
+        </div>
     </div>
   );
 }
-
-
 

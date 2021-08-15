@@ -127,6 +127,10 @@ const CableTV =()=>{
       setChecked((prev) => !prev);
     },[])
   
+    useEffect(()=>{
+      window.scrollTo(0,0)
+    },[])
+    
     // const path = useParams()
   
 
